@@ -1,0 +1,84 @@
+<div class='row'>
+  <%= form_for(business_partner) do |f| %>
+    <div class="row">
+      <% if business_partner.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(business_partner.errors.count, "error") %> prohibited this business_partner from being saved:</h2>
+
+          <ul>
+          <% business_partner.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="row">
+      <div class="row">
+        <div class="input-field col s5">
+          <%= f.select :business_partner_type_id,
+            BusinessPartnerType.all.collect {|p| [ p.descripcion, p.id ] },
+            { include_blank: 'Tipo' } %>
+        </div>
+        <div class="input-field col s5">
+          <%= f.select :coin_id,
+            Coin.all.collect {|c| [c.simbolo, c.id]},
+            { include_blank: 'Moneda'}%>
+        </div>
+        <div class="input-field col s2">
+          <%= f.label :activo, 'Activo?' %>
+          <%= f.check_box :activo %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
+          <%= f.label :nombre %>
+          <%= f.text_field :nombre %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">phone</i>
+          <%= f.label :telefono %>
+          <%= f.text_field :telefono %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">stay_current_portrait</i>
+          <%= f.label :celular %>
+          <%= f.text_field :celular %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">email</i>
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">location_on</i>
+          <%= f.label :direccion %>
+          <%= f.text_area :direccion %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">person_pin</i>
+          <%= f.label :identificador %>
+          <%= f.text_field :identificador %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <button type="submit" name="commit" class="btn waves-effect waves-light">
+        Guardar
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,22 @@
+<%= form_for(business_partner_type) do |f| %>
+  <% if business_partner_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(business_partner_type.errors.count, "error") %> prohibited this business_partner_type from being saved:</h2>
+
+      <ul>
+      <% business_partner_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :descripcion %>
+    <%= f.text_field :descripcion %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

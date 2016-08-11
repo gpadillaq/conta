@@ -1,0 +1,60 @@
+<div class='row'>
+   <%= form_for(product) do |f| %>
+    <div class="row">
+       <% if product.errors.any? %>
+         <div id="error_explanation">
+           <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+           <ul>
+           <% product.errors.full_messages.each do |message| %>
+             <li><%= message %></li>
+           <% end %>
+           </ul>
+         </div>
+       <% end %>
+    </div>
+
+    <div class="row">
+      <div class="col s6">
+        <div class="field">
+          <%= f.label :imei, 'IMEI' %>
+          <%= f.text_field :imei %>
+        </div>
+
+        <div class="field">
+          <%= f.label :serie %>
+          <%= f.text_field :serie %>
+        </div>
+
+        <div class="field">
+          <%= f.label :compra, 'Precio de Compra' %>
+          <%= f.number_field :compra %>
+        </div>
+
+        <div class="field">
+          <%= f.label :utilidad, 'Marge de Utilidad' %>
+          <%= f.number_field :utilidad %>
+        </div>
+
+        <div class="field">
+          <%= f.label :venta, 'Precio de Venta' %>
+          <%= f.number_field :venta %>
+        </div>
+
+      </div>
+      <div class="col s6">
+        <div class="field">
+          <%= f.label :fecha_de_ingreso %>
+          <%= f.text_field :fecha_de_ingreso, class: 'datepicker' %>
+        </div>
+        <div class="field">
+          <%= f.label :description, 'Descripción' %>
+          <%= f.text_field :description %>
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+       <%= f.submit %>
+    </div>
+   <% end %>
+</div>

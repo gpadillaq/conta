@@ -1,0 +1,2 @@
+json.extract! business_partner, :id, :primer_nombre, :segundo_nombre, :primer_apellido, :segundo_apellido, :business_partner_type, :coin, :telefono, :celular, :email, :activo, :direccion, :identificador, :created_at, :updated_at
+json.url business_partner_url(business_partner, format: :json)
