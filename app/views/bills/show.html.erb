@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Business partner:</strong>
+  <%= @bill.business_partner %>
+</p>
+
+<p>
+  <strong>Coin:</strong>
+  <%= @bill.coin %>
+</p>
+
+<p>
+  <strong>Bill type:</strong>
+  <%= @bill.bill_type %>
+</p>
+
+<p>
+  <strong>Nota:</strong>
+  <%= @bill.nota %>
+</p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @bill.numero %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @bill.fecha %>
+</p>
+
+<p>
+  <strong>Fecha de vencimiento:</strong>
+  <%= @bill.fecha_de_vencimiento %>
+</p>
+
+<p>
+  <strong>Anulada:</strong>
+  <%= @bill.anulada %>
+</p>
+
+<p>
+  <strong>Payment type:</strong>
+  <%= @bill.payment_type %>
+</p>
+
+<%= link_to 'Edit', edit_bill_path(@bill) %> |
+<%= link_to 'Back', bills_path %>

@@ -1,0 +1,74 @@
+<div class='row'>
+  <%= form_for(bill) do |f| %>
+    <div class="row">
+      <% if bill.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(bill.errors.count, "error") %> prohibited this bill from being saved:</h2>
+
+          <ul>
+            <% bill.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="row">
+      <%= f.hidden_field :bill_type_id %>
+      <div class="row">
+        <div class="input-field col s5">
+          <%= f.select :business_partner_id,
+            BusinessPartner.all.collect {|p| [ p.descripcion, p.id ] },
+            { include_blank: 'Cliente' }
+           %>
+        </div>
+        <div class="input-field col s3">
+          <%= f.label :numero %>
+          <%= f.text_field :numero %>
+        </div>
+        <div class="input-field col s2">
+          <%= f.check_box :anulada %>
+          <%= f.label :anulada, 'Anulada?' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s5">
+          <%= f.select :coin_id,
+            Coin.all.collect {|c| [c.simbolo, c.id]},
+            { include_blank: 'Moneda'}%>
+        </div>
+        <div class="input-field col s5">
+            <%= f.label :fecha %>
+            <%= f.text_field :fecha, class: 'datepicker' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s5">
+          <%= f.select :payment_type_id,
+            PaymentType.all.collect {|c| [c.display_name, c.id]},
+            { include_blank: 'Moneda'}%>
+        </div>
+        <div class="input-field col s5">
+            <%= f.label :fecha_de_vencimiento %>
+            <%= f.text_field :fecha_de_vencimiento, class: 'datepicker' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :nota %>
+          <%= f.text_area :nota, class: 'materialize-textarea' %>
+        </div>
+      </div>
+      <div class="row">
+        <button type="submit" name="commit" class="btn waves-effect waves-light">
+          Guardar
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </div>
+  <% end %>
+</div>

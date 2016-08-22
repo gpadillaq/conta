@@ -10,10 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160811040050) do
+ActiveRecord::Schema.define(version: 20160822035503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bill_types", force: :cascade do |t|
+    t.string   "nombre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bills", force: :cascade do |t|
+    t.integer  "business_partner_id"
+    t.integer  "coin_id"
+    t.integer  "bill_type_id"
+    t.text     "nota"
+    t.string   "numero"
+    t.date     "fecha"
+    t.date     "fecha_de_vencimiento"
+    t.boolean  "anulada"
+    t.integer  "payment_type_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.index ["bill_type_id"], name: "index_bills_on_bill_type_id", using: :btree
+    t.index ["business_partner_id"], name: "index_bills_on_business_partner_id", using: :btree
+    t.index ["coin_id"], name: "index_bills_on_coin_id", using: :btree
+    t.index ["payment_type_id"], name: "index_bills_on_payment_type_id", using: :btree
+  end
 
   create_table "business_partner_types", force: :cascade do |t|
     t.string   "descripcion"
@@ -44,6 +68,12 @@ ActiveRecord::Schema.define(version: 20160811040050) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "payment_types", force: :cascade do |t|
+    t.string   "nombre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "products", force: :cascade do |t|
     t.string   "description"
     t.string   "imei"
@@ -56,4 +86,8 @@ ActiveRecord::Schema.define(version: 20160811040050) do
     t.datetime "updated_at",       null: false
   end
 
+  add_foreign_key "bills", "bill_types"
+  add_foreign_key "bills", "business_partners"
+  add_foreign_key "bills", "coins"
+  add_foreign_key "bills", "payment_types"
 end

@@ -1,0 +1,2 @@
+json.extract! bill, :id, :business_partner_id, :coin_id, :bill_type_id, :nota, :numero, :fecha, :fecha_de_vencimiento, :anulada, :payment_type_id, :created_at, :updated_at
+json.url bill_url(bill, format: :json)

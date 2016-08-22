@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bills
   root 'homes#index'
   resources :coins
   resources :business_partner_types
