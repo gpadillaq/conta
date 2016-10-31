@@ -1,0 +1,32 @@
+<%= form_for(credit_type) do |f| %>
+  <% if credit_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(credit_type.errors.count, "error") %> prohibited this credit_type from being saved:</h2>
+
+      <ul>
+      <% credit_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :descripcion %>
+    <%= f.text_area :descripcion %>
+  </div>
+
+  <div class="field">
+    <%= f.label :interez %>
+    <%= f.text_field :interez %>
+  </div>
+
+  <div class="field">
+    <%= f.label :activo %>
+    <%= f.check_box :activo %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

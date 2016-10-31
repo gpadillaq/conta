@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @credit_type.descripcion %>
+</p>
+
+<p>
+  <strong>Interez:</strong>
+  <%= @credit_type.interez %>
+</p>
+
+<p>
+  <strong>Activo:</strong>
+  <%= @credit_type.activo %>
+</p>
+
+<%= link_to 'Edit', edit_credit_type_path(@credit_type) %> |
+<%= link_to 'Back', credit_types_path %>

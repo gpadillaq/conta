@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Business partner:</strong>
+  <%= @credit_application.business_partner %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @credit_application.fecha %>
+</p>
+
+<p>
+  <strong>Fecha de vencimiento:</strong>
+  <%= @credit_application.fecha_de_vencimiento %>
+</p>
+
+<p>
+  <strong>Credit type:</strong>
+  <%= @credit_application.credit_type %>
+</p>
+
+<p>
+  <strong>Payment frequency:</strong>
+  <%= @credit_application.payment_frequency %>
+</p>
+
+<p>
+  <strong>Payment number:</strong>
+  <%= @credit_application.payment_number %>
+</p>
+
+<p>
+  <strong>Monto:</strong>
+  <%= @credit_application.monto %>
+</p>
+
+<p>
+  <strong>Coin:</strong>
+  <%= @credit_application.coin %>
+</p>
+
+<p>
+  <strong>Nota:</strong>
+  <%= @credit_application.nota %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @credit_application.status %>
+</p>
+
+<%= link_to 'Edit', edit_credit_application_path(@credit_application) %> |
+<%= link_to 'Back', credit_applications_path %>

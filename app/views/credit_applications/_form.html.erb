@@ -1,0 +1,67 @@
+<%= form_for(credit_application) do |f| %>
+  <% if credit_application.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(credit_application.errors.count, "error") %> prohibited this credit_application from being saved:</h2>
+
+      <ul>
+      <% credit_application.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :business_partner_id %>
+    <%= f.text_field :business_partner_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fecha %>
+    <%= f.date_select :fecha %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fecha_de_vencimiento %>
+    <%= f.date_select :fecha_de_vencimiento %>
+  </div>
+
+  <div class="field">
+    <%= f.label :credit_type_id %>
+    <%= f.text_field :credit_type_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :payment_frequency_id %>
+    <%= f.text_field :payment_frequency_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :payment_number %>
+    <%= f.number_field :payment_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :monto %>
+    <%= f.text_field :monto %>
+  </div>
+
+  <div class="field">
+    <%= f.label :coin_id %>
+    <%= f.text_field :coin_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nota %>
+    <%= f.text_area :nota %>
+  </div>
+
+  <div class="field">
+    <%= f.label :statu_id %>
+    <%= f.text_field :statu_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+json.extract! credit_application, :id, :business_partner_id, :fecha, :fecha_de_vencimiento, :credit_type_id, :payment_frequency_id, :payment_number, :monto, :coin_id, :nota, :status_id, :created_at, :updated_at
+json.url credit_application_url(credit_application, format: :json)

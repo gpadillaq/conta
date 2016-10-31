@@ -1,7 +1,7 @@
 ---
 - :label: Creditos
   :items:
-  - :label: Resultados
-    :url: admin_survey_results_path
-  - :label: Comentarios
-    :url: admin_survey_comments_path
+  - :label: Solicitud de Credito
+    :url: credit_applications_path
+  # - :label: Comentarios
+  #   :url: admin_survey_comments_path

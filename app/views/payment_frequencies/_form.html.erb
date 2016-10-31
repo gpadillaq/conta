@@ -1,0 +1,27 @@
+<%= form_for(payment_frequency) do |f| %>
+  <% if payment_frequency.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(payment_frequency.errors.count, "error") %> prohibited this payment_frequency from being saved:</h2>
+
+      <ul>
+      <% payment_frequency.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :descripcion %>
+    <%= f.text_area :descripcion %>
+  </div>
+
+  <div class="field">
+    <%= f.label :activo %>
+    <%= f.check_box :activo %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

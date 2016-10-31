@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161031020230) do
+ActiveRecord::Schema.define(version: 20161031050202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,34 @@ ActiveRecord::Schema.define(version: 20161031020230) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "credit_applications", force: :cascade do |t|
+    t.integer  "business_partner_id"
+    t.date     "fecha"
+    t.date     "fecha_de_vencimiento"
+    t.integer  "credit_type_id"
+    t.integer  "payment_frequency_id"
+    t.integer  "payment_number"
+    t.decimal  "monto"
+    t.integer  "coin_id"
+    t.text     "nota"
+    t.integer  "statu_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.index ["business_partner_id"], name: "index_credit_applications_on_business_partner_id", using: :btree
+    t.index ["coin_id"], name: "index_credit_applications_on_coin_id", using: :btree
+    t.index ["credit_type_id"], name: "index_credit_applications_on_credit_type_id", using: :btree
+    t.index ["payment_frequency_id"], name: "index_credit_applications_on_payment_frequency_id", using: :btree
+    t.index ["statu_id"], name: "index_credit_applications_on_statu_id", using: :btree
+  end
+
+  create_table "credit_types", force: :cascade do |t|
+    t.text     "descripcion"
+    t.decimal  "interez"
+    t.boolean  "activo"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "galleries", force: :cascade do |t|
     t.integer "section_id"
     t.string  "titulo"
@@ -121,6 +149,13 @@ ActiveRecord::Schema.define(version: 20161031020230) do
     t.index ["template_id"], name: "index_pages_on_template_id", using: :btree
   end
 
+  create_table "payment_frequencies", force: :cascade do |t|
+    t.text     "descripcion"
+    t.boolean  "activo"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "payment_types", force: :cascade do |t|
     t.string   "nombre"
     t.datetime "created_at", null: false
@@ -161,6 +196,13 @@ ActiveRecord::Schema.define(version: 20161031020230) do
     t.boolean "demo",   default: false
   end
 
+  create_table "status", force: :cascade do |t|
+    t.text     "descripcion"
+    t.boolean  "activo"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "styles", force: :cascade do |t|
     t.integer "template_id"
     t.boolean "activo",      default: false
@@ -196,4 +238,9 @@ ActiveRecord::Schema.define(version: 20161031020230) do
   add_foreign_key "bills", "business_partners"
   add_foreign_key "bills", "coins"
   add_foreign_key "bills", "payment_types"
+  add_foreign_key "credit_applications", "business_partners"
+  add_foreign_key "credit_applications", "coins"
+  add_foreign_key "credit_applications", "credit_types"
+  add_foreign_key "credit_applications", "payment_frequencies"
+  add_foreign_key "credit_applications", "status", column: "statu_id"
 end

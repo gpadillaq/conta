@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @payment_frequency.descripcion %>
+</p>
+
+<p>
+  <strong>Activo:</strong>
+  <%= @payment_frequency.activo %>
+</p>
+
+<%= link_to 'Edit', edit_payment_frequency_path(@payment_frequency) %> |
+<%= link_to 'Back', payment_frequencies_path %>

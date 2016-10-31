@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :payment_frequencies
+  resources :credit_types
+  resources :credit_applications
   devise_for :users
   resources :bills
   root 'homes#index'
