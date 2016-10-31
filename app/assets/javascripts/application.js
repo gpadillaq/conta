@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require materialize-sprockets
-//= require_tree .
+//= require form
+
+$(".button-collapse").sideNav();

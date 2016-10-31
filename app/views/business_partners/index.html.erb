@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Business Partners</h1>
+<h1>Socios de Negocios</h1>
 
 <table>
   <thead>
@@ -30,9 +28,9 @@
         <td><%= business_partner.activo %></td>
         <td><%= business_partner.direccion %></td>
         <td><%= business_partner.identificador %></td>
-        <td><%= link_to 'Show', business_partner %></td>
-        <td><%= link_to 'Edit', edit_business_partner_path(business_partner) %></td>
-        <td><%= link_to 'Destroy', business_partner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', business_partner %></td>
+        <td><%= link_to 'Editar', edit_business_partner_path(business_partner) %></td>
+        <td><%= link_to 'Eliminar', business_partner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -40,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Business Partner', new_business_partner_path %>
+<%= link_to 'Crear Socio de Negocios', new_business_partner_path %>

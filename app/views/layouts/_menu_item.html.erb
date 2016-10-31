@@ -1,0 +1,31 @@
+<%
+  is_sub_menu_item ||= false
+  id = I18n.transliterate(menu_item[:label].dehumanize)
+  label = menu_item[:label]
+  url = eval(menu_item[:url].to_s) || "#"
+  items = menu_item[:items]
+  li_class = ""
+  ul_class = ""
+  if items.present?
+    li_class += " no-padding"
+    ul_class += "collapsible collapsible-accordion"
+  end
+%>
+<li id="<%=id%>" class="<%=li_class%>">
+  <% if items.present? %>
+    <ul class="<%=ul_class%>">
+      <li>
+        <a class="collapsible-header"><%= label %><i class="material-icons">arrow_drop_down</i></a>
+        <div class="collapsible-body">
+          <ul>
+            <% items.each do |sub_menu_item| %>
+              <%= render "layouts/menu_item", menu_item: sub_menu_item, is_sub_menu_item: true %>
+            <% end %>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  <% else %>
+    <%= link_to label, url %>
+  <% end %>
+</li>

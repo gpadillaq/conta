@@ -1,1 +1,0 @@
-json.partial! "business_partner_types/business_partner_type", business_partner_type: @business_partner_type

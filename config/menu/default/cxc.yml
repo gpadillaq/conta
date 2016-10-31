@@ -1,0 +1,15 @@
+---
+- :label: Clientes
+  :items:
+  - :label: Clientes
+    :url: business_partners_path
+  # - :label: Tipos de Clientes
+  #   :url: business_partner_types_path
+  # - :label: Asignaturas
+  #   :url: admin_subjects_path
+  # - :label: Grupos
+  #   :url: admin_groups_path
+  # - :label: Intervalos
+  #   :url: admin_intervals_path
+  # - :label: Niveles
+  #   :url: admin_levels_path
