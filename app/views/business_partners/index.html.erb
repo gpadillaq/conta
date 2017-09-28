@@ -17,7 +17,7 @@
   </thead>
 
   <tbody>
-    <% @business_partners.each do |business_partner| %>
+    <% @records.each do |business_partner| %>
       <tr>
         <td><%= business_partner.nombre %></td>
         <td><%= business_partner.business_partner_type.display_name %></td>

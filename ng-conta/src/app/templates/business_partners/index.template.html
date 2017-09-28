@@ -1,1 +1,86 @@
-index business_partners
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2>Data Tables</h2>
+    <ol class="breadcrumb">
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <a>Tables</a>
+      </li>
+      <li class="active">
+        <strong>Data Tables</strong>
+      </li>
+    </ol>
+  </div>
+
+  <div class="col-lg-2"></div>
+
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>Basic Data Tables example with responsive plugin</h5>
+          <div class="ibox-tools">
+            <a class="collapse-link">
+              <i class="fa fa-chevron-up"></i>
+            </a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="fa fa-wrench"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+              <li><a href="#">Config option 1</a></li>
+              <li><a href="#">Config option 2</a></li>
+            </ul>
+            <a class="close-link">
+              <i class="fa fa-times"></i>
+            </a>
+          </div>
+        </div>
+        <div class="ibox-content">
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover dataTables-example" >
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Tipo</th>
+                  <th>Moneda</th>
+                  <th>Telefono</th>
+                  <th>Celular</th>
+                  <th>Email</th>
+                  <th>Activo</th>
+                  <th>Direccion</th>
+                  <th>Identificador</th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr *ngFor="let business_partner of business_partners">
+                  <td>{{business_partner.name}}</td>
+                  <td>{{business_partner.business_partner_type_id}}</td>
+                  <td>{{business_partner.coin_id}}</td>
+                  <td>{{business_partner.telephone}}</td>
+                  <td>{{business_partner.cellphone}}</td>
+                  <td>{{business_partner.email}}</td>
+                  <td>{{business_partner.active}}</td>
+                  <td>{{business_partner.direction}}</td>
+                  <td>{{business_partner.id_number}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="pull-right">10GB of <strong>250GB</strong> Free.</div>
+  <div><strong>Copyright</strong> Example Company &copy; 2014-2017</div>
+</div>
+

@@ -10,8 +10,11 @@ const routes: Routes = [
   { path: '', component: DashboardComponent, pathMatch: 'full' },
   // business_partners route
   { path: 'business_partners', component: BusinessPartnersIndex },
-  { path: 'business_partners/:id', component: BusinessPartnersShow },
-  { path: 'business_partners/:id/form', component: BusinessPartnersForm }
+  { path: 'business_partners/form', component: BusinessPartnersForm },
+  { path: 'business_partners/:id/form', component: BusinessPartnersForm },
+  { path: 'business_partners/:id', component: BusinessPartnersShow }
+
+
 ]
 
 export const appRoutes = RouterModule.forRoot(routes)

@@ -3,6 +3,6 @@ class BusinessPartner < ApplicationRecord
   belongs_to :coin
 
   def display_name
-    self.nombre
+    self.name
   end
 end

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from '../components/app.component';
 import { DashboardComponent } from '../components/dashboard.component';
@@ -16,19 +17,19 @@ import { appRoutes } from '../modules/routing.module';
 @NgModule({
   declarations: [
     AppComponent,
-	DashboardComponent,
+    DashboardComponent,
     NavigationComponent,
     TopnavbarComponent,
 
-	BusinessPartnersIndex,
-	BusinessPartnersForm,
-	BusinessPartnersShow
+    BusinessPartnersIndex,
+    BusinessPartnersForm,
+    BusinessPartnersShow
   ],
   imports: [
     BrowserModule,
-	appRoutes
+    HttpModule,
+    appRoutes
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
