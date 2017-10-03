@@ -17,11 +17,11 @@ export class Service {
 	  			 .map(res => res.json());
     }
   }
-  putPacient(pacient) {
-    return this.http
-        .put(`${this.baseUrl}/${pacient.id}`, pacient, new RequestOptions({headers: this.getHeaders()})).subscribe(pacient => {
-          console.log(pacient);
-        });
+  putService(record) {
+    return this.http.put(`${this.baseUrl}/${record.id}`, record, new RequestOptions({headers: this.getHeaders()}))
+	           .subscribe(pacient => {
+                 console.log(pacient);
+               });
   }
 
   private getHeaders(){

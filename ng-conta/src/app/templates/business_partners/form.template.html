@@ -1,1 +1,40 @@
-form business_partners
+<form #f="ngForm" (ngSubmit)="save(f.value, f.valid)" class="form-horizontal">
+  <input type="hidden" name="id" [(ngModel)]="business_partner.id">
+  <div class="form-group">
+    <label class="col-sm-2 control-label" for="first_name">Nombre:</label>
+    <div class="col-sm-10">
+      <input class='form-control' placeholder='Nombre' required type="text" name="name" [(ngModel)]="business_partner.name">
+	</div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label" for="first_name">Nombre:</label>
+    <div class="col-sm-10">
+      <input class='form-control' placeholder='Nombre' required type="text" name="name" [(ngModel)]="business_partner.name">
+	</div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label" for="first_name">Nombre:</label>
+    <div class="col-sm-10">
+      <input class='form-control' placeholder='Nombre' required type="text" name="name" [(ngModel)]="business_partner.name">
+	</div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label" for="first_name">Nombre:</label>
+    <div class="col-sm-10">
+      <input class='form-control' placeholder='Nombre' required type="text" name="name" [(ngModel)]="business_partner.name">
+	</div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label" for="first_name">Nombre:</label>
+    <div class="col-sm-10">
+      <input class='form-control' placeholder='Nombre' required type="text" name="name" [(ngModel)]="business_partner.name">
+	</div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label" for="first_name">Nombre:</label>
+    <div class="col-sm-10">
+      <input class='form-control' placeholder='Nombre' required type="text" name="name" [(ngModel)]="business_partner.name">
+	</div>
+  </div>
+
+</form>
