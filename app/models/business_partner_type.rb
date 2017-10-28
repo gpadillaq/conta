@@ -1,6 +1,6 @@
 class BusinessPartnerType < ApplicationRecord
 
   def display_name
-    self.descripcion
+    self.description
   end
 end
