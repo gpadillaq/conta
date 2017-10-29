@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <title>Conta</title>
     <%= csrf_meta_tags %>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' =>'reload' %>
+
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <%= render 'layouts/menu_bar' %>
-	  <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p></p>
-   <%= yield %>
-   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Wrapper-->
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <%= render 'layouts/menu_bar' %>
+
+        <!-- Page wraper -->
+        <div id="page-wrapper" class="gray-bg">
+
+            <!-- Page wrapper -->
+            <%= render 'layouts/topnavbar' %>
+
+            <!-- Main view  -->
+            <%= yield %>
+
+            <!-- Footer -->
+            <%= render 'layouts/footer' %>
+
+        </div>
+        <!-- End page wrapper-->
+
+    </div>
+    <!-- End wrapper-->
+    <%# if user_signed_in? %>
+      <%#= render 'layouts/menu_bar' %>
+    <%# end %>
+
+   <%#= yield %>
+
+   <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
   </body>
 </html>

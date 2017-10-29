@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20161031050202) do
   enable_extension "plpgsql"
 
   create_table "bill_types", force: :cascade do |t|
-    t.string   "nombre"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -25,14 +25,14 @@ ActiveRecord::Schema.define(version: 20161031050202) do
     t.integer  "business_partner_id"
     t.integer  "coin_id"
     t.integer  "bill_type_id"
-    t.text     "nota"
-    t.string   "numero"
-    t.date     "fecha"
-    t.date     "fecha_de_vencimiento"
-    t.boolean  "anulada"
+    t.text     "note"
+    t.string   "number"
+    t.date     "date"
+    t.date     "expiration_date"
+    t.boolean  "canceled"
     t.integer  "payment_type_id"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.index ["bill_type_id"], name: "index_bills_on_bill_type_id", using: :btree
     t.index ["business_partner_id"], name: "index_bills_on_business_partner_id", using: :btree
     t.index ["coin_id"], name: "index_bills_on_coin_id", using: :btree
@@ -40,21 +40,21 @@ ActiveRecord::Schema.define(version: 20161031050202) do
   end
 
   create_table "business_partner_types", force: :cascade do |t|
-    t.string   "descripcion"
+    t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   create_table "business_partners", force: :cascade do |t|
-    t.string   "nombre",                   default: "",   null: false
+    t.string   "name",                     default: "",   null: false
     t.integer  "business_partner_type_id",                null: false
     t.integer  "coin_id",                                 null: false
-    t.string   "telefono",                 default: ""
-    t.string   "celular"
+    t.string   "telephone",                default: ""
+    t.string   "cellphone"
     t.string   "email",                    default: ""
-    t.boolean  "activo",                   default: true, null: false
-    t.text     "direccion"
-    t.string   "identificador",            default: "",   null: false
+    t.boolean  "active",                   default: true, null: false
+    t.text     "direction"
+    t.string   "id_number",                default: "",   null: false
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
     t.index ["business_partner_type_id"], name: "index_business_partners_on_business_partner_type_id", using: :btree
@@ -62,22 +62,22 @@ ActiveRecord::Schema.define(version: 20161031050202) do
   end
 
   create_table "coins", force: :cascade do |t|
-    t.string   "descripcion"
-    t.string   "simbolo"
+    t.string   "description"
+    t.string   "symbol"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   create_table "credit_applications", force: :cascade do |t|
     t.integer  "business_partner_id"
-    t.date     "fecha"
-    t.date     "fecha_de_vencimiento"
+    t.date     "date"
+    t.date     "expiration_date"
     t.integer  "credit_type_id"
     t.integer  "payment_frequency_id"
     t.integer  "payment_number"
-    t.decimal  "monto"
+    t.decimal  "amount"
     t.integer  "coin_id"
-    t.text     "nota"
+    t.text     "note"
     t.integer  "statu_id"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20161031050202) do
   end
 
   create_table "credit_types", force: :cascade do |t|
-    t.text     "descripcion"
+    t.text     "description"
     t.decimal  "interez"
     t.boolean  "activo"
     t.datetime "created_at",  null: false
@@ -97,14 +97,14 @@ ActiveRecord::Schema.define(version: 20161031050202) do
   end
 
   create_table "payment_frequencies", force: :cascade do |t|
-    t.text     "descripcion"
-    t.boolean  "activo"
+    t.text     "description"
+    t.boolean  "actived"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   create_table "payment_types", force: :cascade do |t|
-    t.string   "nombre"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -122,8 +122,8 @@ ActiveRecord::Schema.define(version: 20161031050202) do
   end
 
   create_table "status", force: :cascade do |t|
-    t.text     "descripcion"
-    t.boolean  "activo"
+    t.text     "description"
+    t.boolean  "actived"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

@@ -1,0 +1,29 @@
+<%= render partial: 'shared/header-page', locals: {page_name: page_name} %>
+<%= render 'shared/flash', flash: flash %>
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-content">
+          <div class="table-responsive">
+            <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+              <div class="html5buttons">
+                <div class="dt-buttons btn-group">
+                  <%= link_to ['Crear', page_name].join(' '), url, class: 'btn btn-default buttons-excel'%>
+                  <a class="btn btn-default buttons-excel" tabindex="0" href="#">
+                    <span>Excel</span>
+                  </a>
+                </div>
+              </div>
+              <div id="DataTables_Table_0_filter" class="dataTables_filter">
+                <label>Search:<input type="search" class="form-control input-sm" placeholder=""></label>
+              </div>
+              <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 25 of 57 entries</div>
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

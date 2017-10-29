@@ -1,7 +1,7 @@
 class CreateBillTypes < ActiveRecord::Migration[5.0]
   def change
     create_table :bill_types do |t|
-      t.string :nombre
+      t.string :name
 
       t.timestamps
     end

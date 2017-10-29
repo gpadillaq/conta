@@ -1,10 +1,27 @@
-<nav>
-  <div class="nav-wrapper">
-    <ul id="slide-out" class="side-nav">
+<nav class="navbar-default navbar-static-side" role="navigation">
+  <div class="sidebar-collapse">
+    <ul class="nav metismenu" id="side-menu">
+      <li class="nav-header">
+        <div class="dropdown profile-element">
+          <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+            <span class="clear">
+              <span class="block m-t-xs">
+                <strong class="font-bold">Example user</strong>
+              </span>
+              <span class="text-muted text-xs block">Example menu <b class="caret"></b></span>
+            </span>
+          </a>
+          <ul class="dropdown-menu animated fadeInRight m-t-xs">
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </div>
+        <div class="logo-element">
+          KD+
+        </div>
+      </li>
       <% menu_items.each do |menu_item| %>
         <%= render "layouts/menu_item", menu_item: menu_item %>
       <% end %>
     </ul>
-    <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
   </div>
 </nav>

@@ -8,24 +8,22 @@
   ul_class = ""
   if items.present?
     li_class += " no-padding"
-    ul_class += "collapsible collapsible-accordion"
+    ul_class += "nav collapse"
   end
 %>
 <li id="<%=id%>" class="<%=li_class%>">
   <% if items.present? %>
+    <%= link_to url do %>
+      <i class="fa fa-laptop"></i> <span class="nav-label"><%= label %></span><span class="fa arrow"></span>
+    <% end %>
     <ul class="<%=ul_class%>">
-      <li>
-        <a class="collapsible-header"><%= label %><i class="material-icons">arrow_drop_down</i></a>
-        <div class="collapsible-body">
-          <ul>
-            <% items.each do |sub_menu_item| %>
-              <%= render "layouts/menu_item", menu_item: sub_menu_item, is_sub_menu_item: true %>
-            <% end %>
-          </ul>
-        </div>
-      </li>
+      <% items.each do |sub_menu_item| %>
+        <%= render "layouts/menu_item", menu_item: sub_menu_item, is_sub_menu_item: true %>
+      <% end %>
     </ul>
   <% else %>
-    <%= link_to label, url %>
+    <%= link_to url do %>
+      <i class="fa fa-laptop"></i> <span class="nav-label"><%= label %></span>
+    <% end %>
   <% end %>
 </li>

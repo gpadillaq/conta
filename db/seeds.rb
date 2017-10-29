@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create!(email: 'gpadillaq@gmail.com', password: 123123, password_confirmation: 123123)
 
-Coin.where(descripcion: 'Córdoba', simbolo: 'C$').first_or_create!
-Coin.where(descripcion: 'Dolar', simbolo: '$').first_or_create!
+Coin.where(description: 'Córdoba', symbol: 'C$').first_or_create!
+Coin.where(description: 'Dolar', symbol: '$').first_or_create!
 
-BusinessPartnerType.where(descripcion: 'Cliente').first_or_create!
-BusinessPartnerType.where(descripcion: 'Proveedor').first_or_create!
+BusinessPartnerType.where(description: 'Cliente').first_or_create!
+BusinessPartnerType.where(description: 'Proveedor').first_or_create!
