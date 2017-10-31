@@ -3,85 +3,78 @@
     <div class="col-lg-12">
       <div class="ibox float-e-margins">
         <div class="ibox-content">
-          <%= form_for(business_partner) do |f| %>
-            <div class="row">
+          <%= form_for(business_partner, html: {class: 'form-horizontal'}) do |f| %>
               <% if business_partner.errors.any? %>
-                <div id="error_explanation">
-                  <h2><%= pluralize(business_partner.errors.count, "error") %> prohibited this business_partner from being saved:</h2>
-                  <ul>
-                  <% business_partner.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                  <% end %>
-                  </ul>
+                <div class="row">
+                  <div id="error_explanation">
+                    <h2><%= pluralize(business_partner.errors.count, "error") %> prohibited this business_partner from being saved:</h2>
+                    <ul>
+                    <% business_partner.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                    <% end %>
+                    </ul>
+                  </div>
                 </div>
               <% end %>
+
+            <div class="form-group">
+              <%= select_input(f, business_partner, :business_partner_type_id, BusinessPartnerType.all.collect {|p| [ p.description, p.id ] },
+                              {
+                                grid_size: 4, field_message: :business_partner_type,
+                                options: {include_blank: 'Tipo de Socio'},
+                                html_options: {class: 'form-control m-b'}
+                              })
+              %>
+              <%= select_input(f, business_partner, :coin_id, Coin.all.collect {|c| [c.symbol, c.id]},
+                              {
+                                grid_size: 4, field_message: :coin,
+                                options: {include_blank: 'Tipo de Moneda'},
+                                html_options: {class: 'form-control m-b'}
+                              })
+              %>
+              <%= check_box_input(f, business_partner, :active,
+                                  { grid_size: 2, label: 'Activo?'})
+              %>
+            </div>
+            <div class="form-group">
+              <%= text_input(f, business_partner, :name,
+                             {grid_size: 7,
+                              options: { class: 'form-control', placeholder: 'Nombre del Cliente'}})
+              %>
+              <%= text_input(f, business_partner, :id_number,
+                             {grid_size: 4,
+                              options: { class: 'form-control', placeholder: 'Cédula o RUC'}})
+              %>
+            </div>
+            <div class="form-group">
+              <%= text_input(f, business_partner, :telephone,
+                             {grid_size: 2,
+                              options: { class: 'form-control', placeholder: 'Teléfono'}})
+              %>
+              <%= text_input(f, business_partner, :cellphone,
+                             {grid_size: 2,
+                              options: { class: 'form-control', placeholder: 'Celular'}})
+              %>
+              <%= text_input(f, business_partner, :email,
+                             {grid_size: 3,
+                              options: { class: 'form-control', placeholder: 'Email'}})
+              %>
+              <%= text_area_input(f, business_partner, :direction,
+                             {grid_size: 5,
+                              options: { class: 'form-control', placeholder: 'Dirección...'}})
+              %>
             </div>
 
-            <div class="row">
-              <div class="row">
-                <div class="input-field col s5">
-                  <%= f.select :business_partner_type_id,
-                    BusinessPartnerType.all.collect {|p| [ p.description, p.id ] },
-                    { include_blank: 'Tipo' } %>
-                </div>
-        <div class="input-field col s5">
-          <%= f.select :coin_id,
-            Coin.all.collect {|c| [c.symbol, c.id]},
-            { include_blank: 'Moneda'}%>
-        </div>
-        <div class="input-field col s2">
-           <%= f.check_box :active %>
-           <%= f.label :active, 'Activo?' %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">account_circle</i>
-          <%= f.label :name %>
-          <%= f.text_field :name %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">phone</i>
-          <%= f.label :telephone %>
-          <%= f.text_field :telephone %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">stay_current_portrait</i>
-          <%= f.label :cellphone %>
-          <%= f.text_field :cellphone %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">email</i>
-          <%= f.label :email %>
-          <%= f.text_field :email %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">location_on</i>
-          <%= f.label :direction %>
-          <%= f.text_area :direction %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">person_pin</i>
-          <%= f.label :id_number %>
-          <%= f.text_field :id_number %>
+            <div class="hr-line-dashed"></div>
+            <div class="form-group">
+              <div class="col-sm-4 col-sm-offset-2">
+                <button class="btn btn-white" type="submit">Cancelar</button>
+                <button class="btn btn-primary" type="submit">Guardar Cambios</button>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
-    <div class="row">
-      <button type="submit" name="commit" class="btn waves-effect waves-light">
-        Guardar
-        <i class="material-icons right">send</i>
-      </button>
-    </div>
-  <% end %>
+  </div>
 </div>
