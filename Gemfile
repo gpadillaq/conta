@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 #Use bootstrap as framework css.
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'font-awesome-rails', '4.7.0.1'
+gem 'icheck-rails'
 
 #Use Devise for Autentication user.
 gem 'devise', '~> 4.2'
