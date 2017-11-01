@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   resources :payment_frequencies
   resources :credit_types
   resources :credit_applications
