@@ -12,6 +12,15 @@ module Conta
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    # Agregando configuraciones para en dependencia de cada instancia.
+    if ENV["RAILS_USER"].present?
+      directory_user_setting = [Rails.root, 'instance-configuration', ENV["RAILS_USER"]].join('/')
+
+      config.paths['log'] = "log/#{ENV["RAILS_USER"]}_conta.log"
+      config.paths['config/database'] = [directory_user_setting, 'database.yml'].join('/')
+      config.paths['config/secrets'] = [directory_user_setting, 'secret_key.yml'].join('/')
+    end
+
     config.middleware.use Rack::Cors do
       allow do
         origins '*'

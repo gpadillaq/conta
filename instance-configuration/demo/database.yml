@@ -1,0 +1,6 @@
+production:
+  adapter: postgresql
+  pool: 5
+  username: demo
+  password: a3idfa#dasfEER
+  database: demo_conta
