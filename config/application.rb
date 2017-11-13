@@ -21,6 +21,7 @@ module Conta
       config.paths['config/secrets'] = [directory_user_setting, 'secret_key.yml'].join('/')
     end
 
+    config.i18n.default_locale = :es
     config.middleware.use Rack::Cors do
       allow do
         origins '*'

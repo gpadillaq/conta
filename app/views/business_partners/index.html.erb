@@ -1,5 +1,5 @@
 <% content_for :table do %>
-  <table class="table table-striped table-bordered table-hover dataTables-example dataTable" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info" role="grid">
+  <table class="table table-hover" id="business_partners">
     <thead>
       <tr>
         <th>Nombre</th>
@@ -17,15 +17,15 @@
     <tbody>
       <% @records.each do |business_partner| %>
         <tr>
-          <td><%= business_partner.nombre %></td>
+          <td><%= business_partner.name %></td>
           <td><%= business_partner.business_partner_type.display_name %></td>
           <td><%= business_partner.coin.display_name %></td>
-          <td><%= business_partner.telefono %></td>
-          <td><%= business_partner.celular %></td>
+          <td><%= business_partner.telephone %></td>
+          <td><%= business_partner.cellphone %></td>
           <td><%= business_partner.email %></td>
-          <td><%= business_partner.activo %></td>
-          <td><%= business_partner.direccion %></td>
-          <td><%= business_partner.identificador %></td>
+          <td><%= business_partner.active %></td>
+          <td><%= business_partner.direction %></td>
+          <td><%= business_partner.id_number %></td>
           <td><%= link_to 'Ver', business_partner %></td>
           <td><%= link_to 'Editar', edit_business_partner_path(business_partner) %></td>
           <td><%= link_to 'Eliminar', business_partner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
