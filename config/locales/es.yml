@@ -1,4 +1,8 @@
 es:
+  business_partner: 'Socio de Negocios'
+  business_partners: 'Socios de Negocios'
+  error: error,
+  errors: 'errores'
   activerecord:
     errors:
       messages:

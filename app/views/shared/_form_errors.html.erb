@@ -1,0 +1,7 @@
+<% if record.errors.any? %>
+  <div class="row">
+    <div id="error_explanation">
+      <h2><%= pluralize(record.errors.count, 'error evita', 'errores evitan') %> que este <%= I18n.t(record.model_name.singular) %> sea guardado:</h2>
+    </div>
+  </div>
+<% end %>
