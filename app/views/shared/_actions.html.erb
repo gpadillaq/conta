@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="dt-buttons btn-group html5buttons">
+    <% actions.each do |action| %>
+      <%= link_to action[:text], action[:url], class: action[:class] %>
+    <% end %>
+  </div>
+</div>
+<div class="hr-line-dashed"></div>

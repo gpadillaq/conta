@@ -4,19 +4,7 @@
       <div class="ibox float-e-margins">
         <div class="ibox-content">
           <%= form_for(business_partner, html: {class: 'form-horizontal'}) do |f| %>
-              <% if business_partner.errors.any? %>
-                <div class="row">
-                  <div id="error_explanation">
-                    <h2><%= pluralize(business_partner.errors.count, "error") %> prohibited this business_partner from being saved:</h2>
-                    <ul>
-                    <% business_partner.errors.full_messages.each do |message| %>
-                      <li><%= message %></li>
-                    <% end %>
-                    </ul>
-                  </div>
-                </div>
-              <% end %>
-
+            <%= render 'shared/form_errors', record: business_partner %>
             <div class="form-group">
               <%= select_input(f, business_partner, :business_partner_type_id, BusinessPartnerType.all.collect {|p| [ p.description, p.id ] },
                               {
