@@ -1,0 +1,9 @@
+cordoba:
+  id: 1
+  description: 'Córdoba'
+  symbol: 'C$'
+
+dolar:
+  id: 2
+  description: 'Dolar'
+  symbol: '$'

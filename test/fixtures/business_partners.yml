@@ -1,0 +1,11 @@
+cliente:
+  business_partner_type_id: <%= BusinessPartnerType::CLIENTE %>
+  coin_id: <%= Coin::CORDOBA %>
+  name: Nombre Segudo Apellido
+  id_number: 084-133849-9993E
+  telephone: 2222-2222
+  cellphone: 8888-8888
+  email: user1@karnary.com
+  direction: lorem lorem lorem lorem lorem
+  created_at: <%= Date.today %>
+  updated_at: <%= Date.today %>

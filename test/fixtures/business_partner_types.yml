@@ -1,0 +1,7 @@
+cliente:
+  id: 1
+  description: Cliente
+
+proveedor:
+  id: 2
+  description: Proveedor
