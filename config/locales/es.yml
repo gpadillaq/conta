@@ -4,6 +4,34 @@ es:
   error: error,
   errors: 'errores'
   activerecord:
+    attributes:
+      user:
+        confirmation_sent_at: Fecha de envío de confirmación
+        confirmation_token: Código de confirmación
+        confirmed_at: Fecha de confirmación
+        created_at: Fecha de creación
+        current_password: Contraseña actual
+        current_sign_in_at: Fecha del ingreso actual
+        current_sign_in_ip: IP del ingreso actual
+        email: Email
+        encrypted_password: Contraseña cifrada
+        failed_attempts: Intentos fallidos
+        last_sign_in_at: Fecha del último ingreso
+        last_sign_in_ip: IP del último ingreso
+        locked_at: Fecha de bloqueo
+        password: Contraseña
+        password_confirmation: Confirmación de la contraseña
+        remember_created_at: Fecha de 'Recordarme'
+        remember_me: Recordarme
+        reset_password_sent_at: Fecha de envío de código para contraseña
+        reset_password_token: Código para restablecer contraseña
+        sign_in_count: Cantidad de ingresos
+        unconfirmed_email: Email no confirmado
+        unlock_token: Código de desbloqueo
+        updated_at: Fecha de actualización
+    models:
+      user: Usuario
+      business_partner: Socio de Negocios
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"
@@ -109,6 +137,14 @@ es:
   errors:
     format: "%{attribute} %{message}"
     messages:
+      already_confirmed: ya ha sido confirmada, por favor intenta iniciar sesión
+      confirmation_period_expired: necesita confirmarse dentro de %{period}, por favor solicita una nueva
+      expired: ha expirado, por favor solicita una nueva
+      not_found: no se ha encontrado
+      not_locked: no estaba bloqueada
+      not_saved:
+        one: 'Ocurrió un error al tratar de guardar %{resource}:'
+        other: 'Ocurrieron %{count} errores al tratar de guardar %{resource}:'
       accepted: debe ser aceptado
       blank: no puede estar en blanco
       present: debe estar en blanco
@@ -215,35 +251,6 @@ es:
       long: "%d de %B de %Y %H:%M"
       short: "%d de %b %H:%M"
     pm: pm
-es:
-  activerecord:
-    attributes:
-      user:
-        confirmation_sent_at: Fecha de envío de confirmación
-        confirmation_token: Código de confirmación
-        confirmed_at: Fecha de confirmación
-        created_at: Fecha de creación
-        current_password: Contraseña actual
-        current_sign_in_at: Fecha del ingreso actual
-        current_sign_in_ip: IP del ingreso actual
-        email: Email
-        encrypted_password: Contraseña cifrada
-        failed_attempts: Intentos fallidos
-        last_sign_in_at: Fecha del último ingreso
-        last_sign_in_ip: IP del último ingreso
-        locked_at: Fecha de bloqueo
-        password: Contraseña
-        password_confirmation: Confirmación de la contraseña
-        remember_created_at: Fecha de 'Recordarme'
-        remember_me: Recordarme
-        reset_password_sent_at: Fecha de envío de código para contraseña
-        reset_password_token: Código para restablecer contraseña
-        sign_in_count: Cantidad de ingresos
-        unconfirmed_email: Email no confirmado
-        unlock_token: Código de desbloqueo
-        updated_at: Fecha de actualización
-    models:
-      user: Usuario
   devise:
     confirmations:
       confirmed: Tu cuenta ha sido confirmada satisfactoriamente.
@@ -254,10 +261,10 @@ es:
     failure:
       already_authenticated: Ya has iniciado sesión.
       inactive: Tu cuenta aún no ha sido activada.
-      invalid: 
+      invalid:
       last_attempt: Tienes un intento más antes de que tu cuenta sea bloqueada.
       locked: Tu cuenta está bloqueada.
-      not_found_in_database: 
+      not_found_in_database:
       timeout: Tu sesión expiró. Por favor, inicia sesión nuevamente para continuar.
       unauthenticated: Tienes que iniciar sesión o registrarte para poder continuar.
       unconfirmed: Tienes que confirmar tu cuenta para poder continuar.
@@ -341,13 +348,5 @@ es:
       send_instructions: Vas a recibir instrucciones para desbloquear tu cuenta en unos pocos minutos.
       send_paranoid_instructions: Si tu cuenta existe, vas a recibir instrucciones para desbloquear tu cuenta en unos pocos minutos.
       unlocked: Tu cuenta ha sido desbloqueada. Ya puedes iniciar sesión.
-  errors:
-    messages:
-      already_confirmed: ya ha sido confirmada, por favor intenta iniciar sesión
-      confirmation_period_expired: necesita confirmarse dentro de %{period}, por favor solicita una nueva
-      expired: ha expirado, por favor solicita una nueva
-      not_found: no se ha encontrado
-      not_locked: no estaba bloqueada
-      not_saved:
-        one: 'Ocurrió un error al tratar de guardar %{resource}:'
-        other: 'Ocurrieron %{count} errores al tratar de guardar %{resource}:'
+
+
