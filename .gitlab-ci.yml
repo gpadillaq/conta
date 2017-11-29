@@ -1,0 +1,34 @@
+image: ruby:2.4.2
+
+services:
+  - postgres:latest
+
+variables:
+  POSTGRES_DB: conta_test
+  POSTGRES_USER: stock
+  POSTGRES_PASSWORD: ""
+
+stages:
+- build
+- test
+
+before_script:
+  - bundle install
+  - cp config/database-gitlab.yml config/database.yml
+  - RAILS_ENV=test bundle exec rake db:create
+  - RAILS_ENV=test bundle exec rake db:migrate
+
+prepare:
+  stage: build
+  before_script: []
+  script:
+  - bundle install
+  - cp config/database-gitlab.yml config/database.yml
+  - RAILS_ENV=test bundle exec rake db:create
+  - RAILS_ENV=test bundle exec rake db:migrate
+
+minitest:
+  stage: test
+  script:
+  - RAILS_ENV=test bundle exec rake test
+
