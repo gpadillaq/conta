@@ -20,9 +20,6 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-# Ignore test folder
-/test/*
-
 # Ignore assets folder
 /public/assets/*
 
