@@ -25,3 +25,6 @@
 
 # Ignore assets folder
 /public/assets/*
+
+# Ignore vscode folder
+/.vscode
