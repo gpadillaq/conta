@@ -27,8 +27,13 @@ prepare:
   - RAILS_ENV=test bundle exec rake db:create
   - RAILS_ENV=test bundle exec rake db:migrate
 
-minitest:
+minitest-models:
   stage: test
   script:
-  - RAILS_ENV=test bundle exec rake test
+  - RAILS_ENV=test bundle exec rake test test/features/*
+
+minitest-integration:
+  stage: test
+  script:
+  - RAILS_ENV=test bundle exec rake test test/models/*
 
