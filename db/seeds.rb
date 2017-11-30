@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create!(email: 'gpadillaq@gmail.com', password: 123123, password_confirmation: 123123)
+User.create!(email: 'admin@venbrain.com', password: 123123, password_confirmation: 123123)
 
 Coin.where(description: 'Córdoba', symbol: 'C$').first_or_create!
 Coin.where(description: 'Dolar', symbol: '$').first_or_create!

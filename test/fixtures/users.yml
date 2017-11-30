@@ -1,0 +1,3 @@
+default:
+  email: test@venbrain.com
+  encrypted_password: $2a$11$APCzUL6fY1.XpYdrKA2.x.lb8ep5N5gCZltj06grOOrndGWae.bGK

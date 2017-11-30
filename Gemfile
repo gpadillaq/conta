@@ -38,21 +38,23 @@ gem 'devise', '~> 4.2'
 
 gem 'dehumanize', '~> 1.0'
 
-# The CORS spec allows web applications to make cross domain AJAX calls without using workarounds such as JSONP
-gem 'rack-cors', require: 'rack/cors'
-
 group :development, :test do
-  # Use database_cleaner for drop data base.
-  gem 'database_cleaner'
-  # Use for guide style
-  gem 'rubocop'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+end
+
+group :test do
+  # Use database_cleaner for drop data base.
+  gem 'database_cleaner'
   # Use Minitest for test cases.
   gem 'minitest-rails'
+  # Use capybara for integration test
+  gem 'minitest-rails-capybara', '~> 3.0', '>= 3.0.1'
 end
 
 group :development do
+  # Use for guide style
+  gem 'rubocop'
   gem 'listen', '~> 3.0.5'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

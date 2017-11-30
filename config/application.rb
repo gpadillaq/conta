@@ -22,11 +22,5 @@ module Conta
     end
 
     config.i18n.default_locale = :es
-    config.middleware.use Rack::Cors do
-      allow do
-        origins '*'
-        resource '*', headers: :any, methods: [:put, :get, :post]
-      end
-    end
   end
 end
