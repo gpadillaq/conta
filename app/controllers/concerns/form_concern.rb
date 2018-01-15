@@ -8,7 +8,7 @@ module FormConcern
   # la definicion de los metodos principales de un controlador.
   included do
     # Llama al método +search_or_create+ antes de invocar los actions +new+, +show+, +edit+, +create+, +update+
-    before_action :search_or_create, only: [:new, :show, :edit, :create, :update]
+    before_action :search_or_create, only: %i[new show edit create update destroy]
     # Llama al método +scoped_collection+ antes de invocar al actions +index+
     before_action :scoped_collection, only: :index
 
@@ -32,7 +32,7 @@ module FormConcern
     #   def new; end
     #   def edit; end
     #   def show; end
-    [:new, :edit, :show].each do |method|
+    %i[new edit show].each do |method|
       define_method(method) do
         respond_to do |format|
           format.html { @record }
@@ -53,8 +53,18 @@ module FormConcern
     #   def update
     #     save
     #   end
-    [:create, :update].each do |method|
-      define_method(method) {save}
+    %i[create update].each do |method|
+      define_method(method) { save }
+    end
+  end
+
+  ##
+  # Elimina el registro y redirecciona al index del controlador
+  def destroy
+    @record.destroy
+    respond_to do |format|
+      format.html { redirect_to index_path, notice: 'Datos eliminados exitosamente!' }
+      format.json { head :no_content }
     end
   end
 

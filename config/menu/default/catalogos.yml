@@ -1,10 +1,10 @@
 ---
-- :label: Clientes
+- :label: Catalogos
   :items:
-  - :label: Clientes
+  - :label: Socios de Negocios
     :url: business_partners_path
-  # - :label: Tipos de Clientes
-  #   :url: business_partner_types_path
+  - :label: Bodegas
+    :url: storehouses_path
   # - :label: Asignaturas
   #   :url: admin_subjects_path
   # - :label: Grupos

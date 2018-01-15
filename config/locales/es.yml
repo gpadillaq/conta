@@ -1,6 +1,8 @@
 es:
-  business_partner: 'Socio de Negocios'
-  business_partners: 'Socios de Negocios'
+  business_partner: Socio de Negocios
+  business_partners: Socios de Negocios
+  'true': 'Sí'
+  'false': 'No'
   error: error,
   errors: 'errores'
   activerecord:

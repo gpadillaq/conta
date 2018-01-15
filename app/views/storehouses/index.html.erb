@@ -1,0 +1,25 @@
+<% content_for :table do %>
+  <table class="table table-hover" id="storehouses">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Activo</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @records.each do |storehouse| %>
+        <tr>
+          <td><%= storehouse.name %></td>
+          <td><%= storehouse.storehouses_type.display_name %></td>
+          <td><%= I18n.t(storehouse.actived.to_s) %></td>
+          <td><%= link_to 'Editar', edit_storehouse_path(storehouse) %></td>
+          <td><%= link_to 'Eliminar', storehouse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<%= render 'shared/index', page_name: 'Bodegas', url: new_storehouse_path %>

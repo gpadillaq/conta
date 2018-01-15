@@ -1,0 +1,38 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-content">
+          <%= form_for(storehouse, html: {class: 'form-horizontal'}) do |f| %>
+            <%= render 'shared/form_errors', record: storehouse %>
+            <div class="form-group">
+              <%= select_input(f, storehouse, :storehouses_type_id, StorehousesType.all.collect {|p| [ p.display_name, p.id ] },
+                              {
+                                grid_size: 4, field_message: :storehouses_type,
+                                options: {include_blank: 'Tipo de Bodega'},
+                                html_options: {class: 'form-control m-b'}
+                              })
+              %>
+              <%= check_box_input(f, storehouse, :actived,
+                                  { grid_size: 2, label: 'Activo?'})
+              %>
+            </div>
+            <div class="form-group">
+              <%= text_input(f, storehouse, :name,
+                             {grid_size: 7,
+                              options: { class: 'form-control', placeholder: 'Nombre de la Bodega'}})
+              %>
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="form-group">
+              <div class="col-sm-4 col-sm-offset-2">
+                <%= link_to "Cancelar", storehouses_path, class: 'btn btn-white' %>
+                <button class="btn btn-primary" type="submit">Guardar Cambios</button>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
