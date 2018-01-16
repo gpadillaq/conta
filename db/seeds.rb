@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create!(email: 'admin@venbrain.com', password: 123123, password_confirmation: 123123) if User.all.empty?
 
-Coin.where(description: 'Córdoba', symbol: 'C$').first_or_create!
-Coin.where(description: 'Dolar', symbol: '$').first_or_create!
+Coin.where(name: 'Córdoba', symbol: 'C$').first_or_create!
+Coin.where(name: 'Dolar', symbol: '$').first_or_create!
 
-BusinessPartnerType.where(description: 'Cliente').first_or_create!
-BusinessPartnerType.where(description: 'Proveedor').first_or_create!
+BusinessPartnerType.where(name: 'Cliente').first_or_create!
+BusinessPartnerType.where(name: 'Proveedor').first_or_create!
 
 StorehousesType.where(name: 'Ninguno').first_or_create!
 StorehousesType.where(name: 'Venta').first_or_create!

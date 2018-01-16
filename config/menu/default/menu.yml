@@ -1,5 +1,7 @@
 ---
 - :name: 'catalogos'
   :priority: 1
-- :name: 'creditos'
+- :name: 'informes'
+  :priority: 2
+- :name: 'settings'
   :priority: 2

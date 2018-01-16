@@ -128,7 +128,7 @@ module FormConcern
       @record.save!
       respond_to do |format|
         format.html do
-          flash[:success] = 'Datos almacenados exitosamente!'
+          flash[:notice] = 'Datos almacenados exitosamente!'
           redirect_to index_path
         end
         format.json do
@@ -141,7 +141,7 @@ module FormConcern
     rescue ActiveRecord::RecordInvalid
       respond_to do |format|
         format.html do
-          flash.now[:danger] = 'Verifique los datos insertados'
+          flash.now[:error] = 'Verifique los datos insertados'
           render back_path
         end
         format.json do

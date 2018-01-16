@@ -6,7 +6,7 @@
           <%= form_for(business_partner, html: {class: 'form-horizontal'}) do |f| %>
             <%= render 'shared/form_errors', record: business_partner %>
             <div class="form-group">
-              <%= select_input(f, business_partner, :business_partner_type_id, BusinessPartnerType.all.collect {|p| [ p.description, p.id ] },
+              <%= select_input(f, business_partner, :business_partner_type_id, BusinessPartnerType.all.collect {|p| [ p.display_name, p.id ] },
                               {
                                 grid_size: 4, field_message: :business_partner_type,
                                 options: {include_blank: 'Tipo de Socio'},
@@ -20,7 +20,7 @@
                                 html_options: {class: 'form-control m-b'}
                               })
               %>
-              <%= check_box_input(f, business_partner, :active,
+              <%= check_box_input(f, business_partner, :actived,
                                   { grid_size: 2, label: 'Activo?'})
               %>
             </div>

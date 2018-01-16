@@ -5,8 +5,8 @@
     :url: business_partners_path
   - :label: Bodegas
     :url: storehouses_path
-  # - :label: Asignaturas
-  #   :url: admin_subjects_path
+  - :label: Productos
+    :url: ''
   # - :label: Grupos
   #   :url: admin_groups_path
   # - :label: Intervalos

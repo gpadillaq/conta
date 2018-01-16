@@ -7,7 +7,7 @@ class CreateBusinessPartners < ActiveRecord::Migration[5.0]
       t.string :telephone, default: ''
       t.string :cellphone, defalut: ''
       t.string :email, default: ''
-      t.boolean :active, null: false, default: true
+      t.boolean :actived, null: false, default: true
       t.text :direction, defalut: ''
       t.string :id_number, null: false, default: ''
 

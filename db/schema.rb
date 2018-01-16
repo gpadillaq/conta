@@ -16,9 +16,7 @@ ActiveRecord::Schema.define(version: 20180114010935) do
   enable_extension "plpgsql"
 
   create_table "bill_types", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "bills", force: :cascade do |t|
@@ -40,9 +38,7 @@ ActiveRecord::Schema.define(version: 20180114010935) do
   end
 
   create_table "business_partner_types", force: :cascade do |t|
-    t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string "name"
   end
 
   create_table "business_partners", force: :cascade do |t|
@@ -52,7 +48,7 @@ ActiveRecord::Schema.define(version: 20180114010935) do
     t.string   "telephone",                default: ""
     t.string   "cellphone"
     t.string   "email",                    default: ""
-    t.boolean  "active",                   default: true, null: false
+    t.boolean  "actived",                  default: true, null: false
     t.text     "direction"
     t.string   "id_number",                default: "",   null: false
     t.datetime "created_at",                              null: false
@@ -62,10 +58,8 @@ ActiveRecord::Schema.define(version: 20180114010935) do
   end
 
   create_table "coins", force: :cascade do |t|
-    t.string   "description"
-    t.string   "symbol"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string "name"
+    t.string "symbol"
   end
 
   create_table "credit_applications", force: :cascade do |t|
@@ -89,28 +83,24 @@ ActiveRecord::Schema.define(version: 20180114010935) do
   end
 
   create_table "credit_types", force: :cascade do |t|
-    t.text     "description"
-    t.decimal  "interez"
-    t.boolean  "activo"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.text    "name"
+    t.decimal "interez"
+    t.boolean "activo"
   end
 
   create_table "payment_frequencies", force: :cascade do |t|
-    t.text     "description"
+    t.text     "name"
     t.boolean  "actived"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "payment_types", force: :cascade do |t|
-    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "payment_types", force: :cascade do |t|
+    t.string "name"
+  end
+
   create_table "products", force: :cascade do |t|
-    t.string   "description"
+    t.string   "name"
     t.string   "imei"
     t.string   "serie"
     t.date     "fecha_de_ingreso"
@@ -122,10 +112,8 @@ ActiveRecord::Schema.define(version: 20180114010935) do
   end
 
   create_table "status", force: :cascade do |t|
-    t.text     "description"
-    t.boolean  "actived"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.text    "name"
+    t.boolean "actived"
   end
 
   create_table "storehouses", force: :cascade do |t|

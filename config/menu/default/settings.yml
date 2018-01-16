@@ -1,0 +1,9 @@
+---
+- :label: Settings
+  :items:
+  - :label: Usuarios
+    :url: ''
+  - :label: Roles
+    :url: ''
+  - :label: Logs
+    :url: ''

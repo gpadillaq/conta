@@ -1,7 +1,10 @@
 class Storehouse < ApplicationRecord
+  validates :name, presence: true
+
   belongs_to :storehouses_type
 
+
   def display_name
-    self.description
+    self.name
   end
 end

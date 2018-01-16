@@ -1,7 +1,7 @@
 class CreateProducts < ActiveRecord::Migration[5.0]
   def change
     create_table :products do |t|
-      t.string :description
+      t.string :name
       t.string :imei
       t.string :serie
       t.date :fecha_de_ingreso

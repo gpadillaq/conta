@@ -22,7 +22,7 @@
           <td><%= business_partner.telephone %></td>
           <td><%= business_partner.cellphone %></td>
           <td><%= business_partner.email %></td>
-          <td><%= business_partner.active %></td>
+          <td><%= I18n.t(business_partner.actived) %></td>
           <td><%= business_partner.id_number %></td>
           <td><%= link_to 'Ver', business_partner %></td>
           <td><%= link_to 'Editar', edit_business_partner_path(business_partner) %></td>
@@ -33,4 +33,6 @@
   </table>
 <% end %>
 
-<%= render 'shared/index', page_name: 'Socios de Negocios', url: new_business_partner_path %>
+<%= render 'shared/index', page_name: 'Socios de Negocios',
+           url: new_business_partner_path, index_url: business_partners_path
+%>

@@ -1,10 +1,18 @@
 es:
   business_partner: Socio de Negocios
   business_partners: Socios de Negocios
+  storehouse: Bodega
+  storehouses: Bodegas
   'true': 'Sí'
   'false': 'No'
   error: error,
   errors: 'errores'
+  bootsrap:
+    alert:
+      alert: 'warning'
+      error: 'danger'
+      notice: 'success'
+      info: 'info'
   activerecord:
     attributes:
       user:

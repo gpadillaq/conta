@@ -1,9 +1,9 @@
 cordoba:
   id: 1
-  description: 'Córdoba'
+  name: 'Córdoba'
   symbol: 'C$'
 
 dolar:
   id: 2
-  description: 'Dolar'
+  name: 'Dolar'
   symbol: '$'

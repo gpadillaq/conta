@@ -2,8 +2,8 @@
   <h2><%= page_name %></h2>
   <div class="col-lg-10">
     <ol class="breadcrumb">
-      <li><a href="index.html">Home</a></li>
-      <li class="active"><strong>Socios de Negocios</strong></li>
+      <li><%= link_to 'Home', root_path %></li>
+      <li class="active"><strong><%= link_to I18n.t(controller_name), index_url %></strong></li>
     </ol>
     </div>
     <div class="col-lg-2"></div>

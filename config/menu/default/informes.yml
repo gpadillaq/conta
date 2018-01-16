@@ -1,0 +1,11 @@
+---
+- :label: Informes
+  :items:
+  - :label: Movimientos de Inventario
+    :url: ''
+  - :label: Existencias
+    :url: ''
+  - :label: Toma de Inventario
+    :url: ''
+  - :label: Catalogo Por Clasificaión
+    :url: ''

@@ -1,2 +1,7 @@
-<%= render partial: 'shared/header-page', locals: {page_name: 'Nuevo Socio de Negocios'} %>
+<%= render partial: 'shared/header-page',
+           locals: {
+             page_name: 'Nuevo Socio de Negocios',
+             index_url: business_partners_path
+           }
+%>
 <%= render 'form', business_partner: @record %>

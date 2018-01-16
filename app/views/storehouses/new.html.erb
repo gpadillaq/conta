@@ -1,2 +1,6 @@
-<%= render partial: 'shared/header-page', locals: {page_name: 'Nueva Bodega'} %>
+<%= render partial: 'shared/header-page',
+           locals: {
+             page_name: 'Nueva Bodega',
+             index_url: storehouses_path
+           } %>
 <%= render 'form', storehouse: @record %>

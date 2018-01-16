@@ -3,6 +3,6 @@ class BusinessPartnerType < ApplicationRecord
   PROVEEDOR = 2
 
   def display_name
-    self.description
+    self.name
   end
 end
